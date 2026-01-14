@@ -1,0 +1,8 @@
+nome= input('Olá jovem, como se chama?')
+print('Lindo nome', nome+',' ' vamos fazer alguns cálculos?')
+n1= int(input ('escolha algum número:'))
+print('Opa, tranquilo')
+n2= int(input ('Para continuarmos a soma, escolha outro número;'))
+print('Alguem está animado')
+#print('A soma entre',n1, 'e', n2, 'é igual a: {}'.format(n1+n2))
+print('A soma entre {} e {} vale: {}'.format(n1,n2,n1+n2))

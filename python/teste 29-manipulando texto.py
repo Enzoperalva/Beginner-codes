@@ -1,0 +1,8 @@
+print('Vamos manipular seu nome')
+name= str(input('Para isso, vou precisar que você me informe ele:')).strip()
+n1= name.replace(' ', '')
+n2= len (n1)
+print(f'Seu nome com todas as letras maisculas: {name.upper()}')
+print(f'Seu nome com todas elas minusculas: {name.lower()}')
+print(f'Seu nome tem {n2} letras')
+print(f'Seu primeiro nome tem {name.find(' ')} letras!')

@@ -1,0 +1,5 @@
+print ('Eae jovem garfanhoto! Vamos realizar alguns calculos')
+n1=int(input ('escolha um número:'))
+n2=int(input ('escolha outro número;'))
+#print ('O resultado entre', n1, 'e', n2, 'é:', (n1+n2))
+print ('O resultado entre {} e {} é {}'.format (n1,n2,n1+n2))
