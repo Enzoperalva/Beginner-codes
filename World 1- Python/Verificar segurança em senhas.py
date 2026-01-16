@@ -1,31 +1,32 @@
 import time
-print('Vamos cadastrar sua conta:')
+print('Vamos cadastrar sua conta!')
 
-#VARIAVEIS:
+#VARIAVEIS E ENTRADAS:
 
-name= str(input('\033[7;37mNome de usuário:\033[m')).lower()
-senha= str(input('\033[7;37mSenha:\033[m'))
+name= str(input('\033[7;37mNome de usuário:\033[m')).strip().lower()
+senha= str(input('\033[7;37mSenha:\033[m')).strip()
+
+
 quantidade= len(senha) >= 8
-maiuscula= name.capitalize()
-num= senha[-1].isdigit()
-teste_tamanho= quantidade > 8
+regra_name= name not in senha.lower()
+regra_maiuscula= senha[0].isupper()
+regra_numero= senha[-1].isdigit()
 
 #INTERAÇÃO:
 print('\033[33mANALISANDO...\033[m')
 time.sleep(2)
 
-#CONDIÇÕES:
-if name in senha:
-
- print('\033[35mSUA SENHA NÃO É ADEQUADA, VEJA O MOTIVO:\033[m')
-time.sleep(2)
-
-print('\033[31mSua senha não pode conter seu nome!\033[m')
-if quantidade < 8:
-    print('\033[31mSua senha precisa ter 8 ou mais dígitos!\033[m')
-if name != maiuscula:
-    print('\033[31mPrecisa começar com letra maiúscula!\033[m')
-if not num:
-    print('\033[31mPrecisa terminar com algum número!\033[m')
+#CONDIÇÕES/ PORTÃO DA SEGURANÇA:
+if quantidade and regra_name and regra_maiuscula and regra_numero:
+ print('\033[32mSUA SENHA É ADEQUADA, PARÁBENS!\033[m')
 else:
-    print('\033[32mSua senha está adequada!\033[m')
+    print('\033[35mSUA SENHA NÃO É ADEQUADA, VEJA OS MOTIVOS:\033[m')
+    time.sleep(2)
+    if not quantidade:
+        print('\033[31mSUA SENHA PRECISA TER 8 DÍGITOS!\033[m')
+    if not regra_maiuscula:
+        print('\033[31mSUA SENHA PRECISA COMEÇAR COM LETRA MAIÚSCULA!')
+    if not regra_name:
+        print('\033[31mSUA SENHA NÃO PODE TER SEU NOME!')
+    if not regra_numero:
+        print('\033[31mSUA SENHA PRECISA TERMINAR COM ALGUM NÚMERO!\033[m')
