@@ -24,7 +24,7 @@ taxa= salario * 0.3
 
 #CONDIÇÕES/ PARTES FINAIS:
 
-if mensal > taxa:
+if mensal >= taxa:
     print(f'\033[31mEMPRÉSTIMO NEGADO\033[m')
     print(f'Para pagar uma casa de R${preco:.2f} em {parcela} anos a prestação será de R${mensal:.2f}')
 else:
