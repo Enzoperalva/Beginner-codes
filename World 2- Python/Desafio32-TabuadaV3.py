@@ -1,12 +1,9 @@
-count=num=0
 while True:
-    while num>=0:
-        for c in range(0, 11):
-            num= int(input('Você quer ver a tabuada de qual valor:'))
-            print('=='*20)
-            print(f'{num} x {count} = {num*count}')
-            count+=1
-            print('==' * 20)
-    if num<0:
+    cont= 0
+    num = int(input('Você quer ver a tabuada de qual valor:'))
+    if num < 0:
         break
-print('Falha, o número não pode ser menor que zero!')
+    for c in range(1,11):
+        print(f'{num} x {cont} = {num*cont}')
+        cont+=1
+print('\033[31mFalha, o número não pode ser negativo!\033[m')
