@@ -1,11 +1,16 @@
-valores= list()
+valores = list()
 while True:
-    valores.append(int(input('Cadastre algum valor:')))
-    while valores == valores:
-        print('Não repita valores:')
-        valores.append(int(input('Cadastre algum valor:')))
-    continuar= str(input('Deseja continuar [S/N]:')).upper().strip()[0]
+    n =(int(input('Cadastre algum valor:')))
+    print('Valor adicionado com sucesso!')
+    if n not in valores:
+        valores.append(n)
+    else:
+        print('Valor duplicado, NÃO VOU ADICIONAR')
+    continuar = str(input('Deseja continuar [S/N]:')).upper().strip()[0]
     while continuar != 'N' and continuar != 'S':
-        continuar= str(input('Tente novamente!Deseja continuar [S/N]:')).upper().strip()[0]
+        continuar = str(input('Tente novamente!Deseja continuar [S/N]:')).upper().strip()[0]
     if continuar == 'N':
         break
+print('=-'*20)
+valores.sort()
+print(f'Valores adicionados: {valores}')
